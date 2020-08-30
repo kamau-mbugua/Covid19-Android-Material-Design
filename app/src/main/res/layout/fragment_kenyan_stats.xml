@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".KenyanStats">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewGraph"
+        android:id="@+id/cardViewGraph1"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_marginLeft="20dp"
@@ -24,7 +24,7 @@
             android:weightSum="2">
             <org.eazegraph.lib.charts.PieChart
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/piechart"
+                android:id="@+id/piechart1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:padding="8dp"
@@ -109,14 +109,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_below="@+id/cardViewGraph"
-        android:layout_above="@+id/cvBottom"
+        android:layout_below="@+id/cardViewGraph1"
+        android:layout_above="@+id/cvBottom1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="5dp"
-        android:id="@+id/cardViewGlobal"
+        android:id="@+id/cardViewGlobal1"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -125,7 +125,7 @@
 
             <com.leo.simplearcloader.SimpleArcLoader
                 android:visibility="visible"
-                android:id="@+id/loader"
+                android:id="@+id/loader1"
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -134,7 +134,7 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:visibility="gone"
-                android:id="@+id/scrollStats"
+                android:id="@+id/scrollStats1"
                 android:layout_height="match_parent">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Global Stats"
+                        android:text="Kenya Stats"
                         android:textAllCaps="true"
                         android:textSize="28sp"
                         android:textStyle="bold"
@@ -175,7 +175,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvcases"
+                            android:id="@+id/tvcases1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -208,7 +208,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvRecovered"
+                            android:id="@+id/tvRecovered1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -241,7 +241,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvCritical"
+                            android:id="@+id/tvCritical1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -274,7 +274,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvActive"
+                            android:id="@+id/tvActive1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -307,7 +307,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvTodayCases"
+                            android:id="@+id/tvTodayCases1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -340,7 +340,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvTodayDeaths"
+                            android:id="@+id/tvTodayDeaths1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -373,7 +373,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvTotalDeaths"
+                            android:id="@+id/tvTotalDeaths1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -400,13 +400,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Affected Countries"
+                            android:text="Total Test"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:id="@+id/tvAffectedCountries"
+                            android:id="@+id/tvTotalTest1"
                             android:textSize="18sp"
                             android:textAlignment="textEnd"
                             android:textColor="@color/color_one"
@@ -428,14 +428,14 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    <!--<androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/cvBottom"
+        android:id="@+id/cvBottom1"
         app:cardElevation="10dp"
         app:cardCornerRadius="5dp">
         <LinearLayout
@@ -443,7 +443,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-          <!--  <Button
+          &lt;!&ndash;  <Button
                 android:id="@+id/btnTrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -455,25 +455,25 @@
                 android:padding="5dp"
                 android:text="Track countries"
                 android:textColor="@android:color/white"
-                android:textSize="18sp" />-->
+                android:textSize="18sp" />&ndash;&gt;
 
-            <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="2dp"
-                ads:adSize="BANNER"
-                android:layout_marginBottom="2dp"
-                ads:adUnitId="ca-app-pub-5908187176288934/8596094259">
-            </com.google.android.gms.ads.AdView>
+
 
         </LinearLayout>
 
 
 
 
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        ads:adSize="BANNER"
+        android:layout_marginBottom="2dp"
+        ads:adUnitId="ca-app-pub-5908187176288934/7092951069">
+    </com.google.android.gms.ads.AdView>
 
 </LinearLayout>

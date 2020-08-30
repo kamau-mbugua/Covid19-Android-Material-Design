@@ -429,27 +429,15 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/cvBottom"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="5dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+
+
 
             <Button
                 android:id="@+id/btnTrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="2dp"
                 android:background="@color/color_one"
@@ -458,25 +446,16 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
-            <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="2dp"
-                ads:adSize="BANNER"
-                android:layout_marginBottom="2dp"
-                ads:adUnitId="ca-app-pub-5908187176288934/8596094259">
-            </com.google.android.gms.ads.AdView>
 
-        </LinearLayout>
-
-
-
-
-    </androidx.cardview.widget.CardView>
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-5908187176288934/1398589490"></com.google.android.gms.ads.AdView>
 
 
 </LinearLayout>

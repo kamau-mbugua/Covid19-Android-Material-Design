@@ -13,4 +13,8 @@
     <color name="recovered">#66BB6A</color>
     <color name="deaths">#EF5350</color>
     <color name="active">#2986F6</color>
+
+    <color name= "IntroColor">#109689</color>
+    <color name= "IntroColor1">#00797F</color>
+    <color name= "IntroColor2">#B5E577</color>
 </resources>

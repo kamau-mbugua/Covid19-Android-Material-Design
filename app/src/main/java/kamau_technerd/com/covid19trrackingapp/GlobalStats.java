@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +41,10 @@ import org.json.JSONObject;
  */
 public class GlobalStats extends Fragment {
 
-    AdView adView;
+    PageAdapter pageAdapter;
+    ViewPager viewPager;
+
+    AdView adView3;
 
     TextView tvCases, tvRecovered, tvCritical, tvActive,
             tvTodayCases, tvTodayDeaths, tvTotalDeaths, tvAffectedCountries;
@@ -47,6 +52,7 @@ public class GlobalStats extends Fragment {
     Button btmTrack;
     SimpleArcLoader simpleArcLoader;
     PieChart pieChat;
+    View view;
 
 
     public GlobalStats() {
@@ -58,9 +64,10 @@ public class GlobalStats extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_global_stats, container, false);
+       /* View*/ view = inflater.inflate(R.layout.fragment_global_stats, container, false);
 
-        // Inflate the layout for this fragment
+
+        /*// Inflate the layout for this fragment
         //  return inflater.inflate(R.layout.fragment_global_stats, container, false);
         tvCases = (TextView) view.findViewById(R.id.tvcases);
         tvRecovered = (TextView) view.findViewById(R.id.tvRecovered);
@@ -99,12 +106,59 @@ public class GlobalStats extends Fragment {
         });
 
         AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+        adView.loadAd(adRequest);*/
 
         return view;
 
 
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        tvCases = (TextView) view.findViewById(R.id.tvcases);
+        tvRecovered = (TextView) view.findViewById(R.id.tvRecovered);
+        tvCritical = (TextView) view.findViewById(R.id.tvCritical);
+        tvActive = (TextView) view.findViewById(R.id.tvActive);
+        tvTodayCases = (TextView) view.findViewById(R.id.tvTodayCases);
+        tvTodayDeaths = (TextView) view.findViewById(R.id.tvTodayDeaths);
+        tvTotalDeaths = (TextView) view.findViewById(R.id.tvTotalDeaths);
+        tvAffectedCountries = (TextView) view.findViewById(R.id.tvAffectedCountries);
+
+        scrollView = view.findViewById(R.id.scrollStats);
+        simpleArcLoader = view.findViewById(R.id.loader);
+        pieChat = view.findViewById(R.id.piechart);
+        adView3 = view.findViewById(R.id.adView3);
+        btmTrack = view.findViewById(R.id.btnTrack);
+
+        btmTrack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AffectedCountries.class);
+                startActivity(intent);
+                return;
+
+            }
+        });
+
+
+
+        fetchData();
+
+        MobileAds.initialize(getActivity(),/*"ca-app-pub-5908187176288934~2886112742");*/ new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView3.loadAd(adRequest);
+
+
+    }
+
 
     private void fetchData() {
         String url = "https://corona.lmao.ninja/v2/all";
